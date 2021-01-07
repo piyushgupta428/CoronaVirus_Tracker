@@ -14,7 +14,7 @@ class App extends React.Component {
 
     async componentDidMount() {
         const fetchedData = await fetchData();
-        
+
         this.setState({ data: fetchedData });
     }
 
@@ -28,6 +28,7 @@ class App extends React.Component {
         const { data, country } = this.state;
         return (
             <div className={styles.container}>
+             <h4 style={{display: 'flex',  justifyContent:'center' , bottom:0, left:0,alignItems: "center", position:"fixed", color:"rgb(69,39,160)"}}> Corona Virus tracker &copy; Piyush Gupta</h4>
                 <img className={styles.image} src={coronaImage} alt="COVID-19" />
                 <Cards data={data} />
                 <CountryPicker handleCountryChange={this.handleCountryChange}/>
